@@ -1,0 +1,6 @@
+{
+  "ffmpeg": "utils/linux64bits/ffmpeg",
+  "debug": false,
+  "tsChunkSize": 10,
+  "allowCache": true
+}

@@ -1,3 +1,16 @@
+# rmp-segment must ignore those files
+.vscode
+output/*
+input/bbb-abr
+input/bbb-audio
+input/bbb-audio-abr
+input/bbb-maudio
+input/bbb-maudio-abr
+node_modules
+player
+test.ods
+input.zip
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
