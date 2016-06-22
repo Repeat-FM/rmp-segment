@@ -1,6 +1,6 @@
 {
   "name": "rmp-segment",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Arnaud Leyder <arnaud@radiantmediaplayer.com>",
   "dependencies": {
     "mkdirp": "^0.5.1",
