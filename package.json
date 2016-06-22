@@ -34,7 +34,8 @@
     "url": "https://github.com/radiantmediaplayer/rmp-segment/issues"
   },
   "homepage": "https://github.com/radiantmediaplayer/rmp-segment#readme",
+  "preferGlobal": true,
   "bin": {
-    "rmp-segment": "./rmp-segment.js"
+    "rmp-segment": "main.js"
   }
 }

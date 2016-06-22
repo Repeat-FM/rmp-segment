@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 'use strict';
 // core modules
 const Prepare = require('./libs/prepare.js');
