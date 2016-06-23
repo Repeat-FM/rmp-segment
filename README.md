@@ -44,7 +44,7 @@ https://www.radiantmediaplayer.com/rmp-segment/
 
 ## For developers
 ```
-git clone https://github.com/radiantmediaplayer/rmp-segment.git`
+git clone https://github.com/radiantmediaplayer/rmp-segment.git
 cd rmp-segment
 npm install
 ```
@@ -57,7 +57,7 @@ In working directory (where main.js is) run:
 
 `grunt`
 
-If it greenlights you are good to go.
+If it greenlights (jshint + jasmine tests are ok) you are good to go.
 
 ## Example
 Here are some HLS streams generated with rmp-segment
@@ -65,9 +65,8 @@ Here are some HLS streams generated with rmp-segment
 - AES-128 ABR stream: https://www.radiantmediaplayer.com/media/rmp-segment/bbb-abr-aes/playlist.m3u8
 - Video with 3 audio tracks stream: https://www.radiantmediaplayer.com/media/rmp-segment/bbb-maudio/playlist.m3u8
 
-## Issues
-Code related issues should be submitted through GitHub.
-For business users we can provide a [support and LGPL v3 licensing plan](https://www.radiantmediaplayer.com/rmp-segment/#rmp-segment-plan).
+## Supporting the project
+Code contributions and further testing are welcome.
 
 ## License
 rmp-segment is released under GPL version 3.
@@ -77,5 +76,4 @@ rmp-segment uses the following dependencies:
 - [mp4box.js](https://github.com/gpac/mp4box.js/) which is released under  BSD-3
 - [node-mkdirp](https://github.com/substack/node-mkdirp) which is released under MIT
 
-## Supporting the project
-Code contributions and further testing are welcome.
+For business users we can provide a [support and LGPL v3 licensing plan](https://www.radiantmediaplayer.com/rmp-segment/#rmp-segment-plan).
