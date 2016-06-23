@@ -49,9 +49,12 @@ cd rmp-segment
 npm install
 ```
 
-Install jshint globally: 
-
-`npm install -g jshint`
+Install grunt-cli, jshint and jasmine globally (if you do not already have them): 
+```
+npm install -g grunt-cli
+npm install -g jshint
+npm install -g jasmine
+```
 
 In working directory (where main.js is) run:
 

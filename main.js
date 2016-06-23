@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 /** 
  * rmp-segment: an open-source node.js HLS segmenter
  * 
@@ -21,6 +21,7 @@
 // core modules
 const path = require('path');
 const os = require('os');
+const fs = require('fs');
 const Prepare = require('./libs/prepare.js');
 const FW = require('./libs/fw.js');
 var fw = new FW();
@@ -81,7 +82,28 @@ if (!fw.fileExists(ffmpeg)) {
 } else if (globalConfig.debug) {
   console.log('RMP-SEGMENT: path to ffmpeg - ' + ffmpeg);
 }
-
+// verify/set +x permission for FFmpeg
+try {
+  fs.accessSync(ffmpeg, fs.X_OK);
+} catch (e) {
+  if (globalConfig.debug) {
+    console.log('RMP-SEGMENT: cannot execute FFmpeg due to missing permission');
+    console.log(e);
+    console.log('RMP-SEGMENT: trying to set permission to execute FFmpeg now');
+  }
+  try {
+    fs.chmodSync(ffmpeg, '744');
+    if (globalConfig.debug) {
+      console.log('RMP-SEGMENT: successfully set permission for FFmpeg to execute - resuming segmenting');
+    }
+  } catch (e) {
+    if (globalConfig.debug) {
+      console.log(e);
+      console.log('RMP-SEGMENT: could not set proper permission to execute FFmpeg - exiting');
+    }
+    return;
+  }
+}
 globalConfig.ffmpeg = ffmpeg;
 globalConfig.tsChunkSize = tsChunkSize;
 if (allowCache) {
