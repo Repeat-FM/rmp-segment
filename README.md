@@ -27,7 +27,7 @@ rmp-segment is developed with ES6 and makes uses of new ES6 features like Promis
  - Ubuntu 14+
  - Fedora 24+
 - OS Windows 64-bits:
- - Windows 8.1+
+ - Windows 8.1+ (PowerShell)
 
 These are the OS we tested rmp-segment on. 32-bits OS are not supported.
 
@@ -42,10 +42,12 @@ The segmenter will locate all valid input files (.mp4|.m4a|.m4v) in `input/bbb` 
 ## Documentation
 https://www.radiantmediaplayer.com/rmp-segment/
 
-## For developer
-`git clone https://github.com/radiantmediaplayer/rmp-segment.git`
-`cd rmp-segment`
-`npm install`
+## For developers
+```
+git clone https://github.com/radiantmediaplayer/rmp-segment.git`
+cd rmp-segment
+npm install
+```
 
 Install jshint globally: 
 
@@ -65,7 +67,7 @@ Here are some HLS streams generated with rmp-segment
 
 ## Issues
 Code related issues should be submitted through GitHub.
-If you are looking for professional support we provide a dedicated support and custom licensing plan.
+For business users we can provide a [support and LGPL v3 licensing plan](https://www.radiantmediaplayer.com/rmp-segment/#rmp-segment-plan).
 
 ## License
 rmp-segment is released under GPL version 3.
@@ -74,13 +76,6 @@ rmp-segment uses the following dependencies:
 - [FFmpeg](https://github.com/FFmpeg/FFmpeg) which is released under GPL version 3 as well
 - [mp4box.js](https://github.com/gpac/mp4box.js/) which is released under  BSD-3
 - [node-mkdirp](https://github.com/substack/node-mkdirp) which is released under MIT
-
-## LGPL v3 licensing and professional support
-For business users we can provide a support and LGPL v3 licensing plan. This plan includes:
-- Professional email-based technical support with priority bugfixes and feature requests
-- Business-friendly LGPL version 3 compatible code for rmp-segment and FFmpeg build for Linux or Windows
-
-Visit this [page to subscribe](https://www.radiantmediaplayer.com/rmp-segment/#rmp-segment-plan) or [contact us](https://www.radiantmediaplayer.com/contact.html) for more information. 
 
 ## Supporting the project
 Code contributions and further testing are welcome.
