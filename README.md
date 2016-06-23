@@ -3,7 +3,7 @@ rmp-segment is an open-source node.js HLS segmenter. It is built as a portable c
 
 It follows the HTTP Live Streaming [IETF sepcification](https://tools.ietf.org/html/draft-pantos-http-live-streaming-03). It uses [FFmpeg](https://github.com/FFmpeg/FFmpeg) for MPEG-2 TS segmenting. 
 
-rmp-segment is an open-source project released under GPL version 3.
+rmp-segment is an open-source project released under GPL version 3. For business users we can provide a [support and LGPL v3 licensing plan](https://www.radiantmediaplayer.com/rmp-segment/#rmp-segment-plan).
 
 ## Supported features
 - on-demand video segmenting (output to MPEG-2 TS container)
@@ -17,38 +17,43 @@ rmp-segment is an open-source project released under GPL version 3.
 - DVR
 - Embedded closed captions (WebVTT or CEA-*)
 
-Contributions are welcome
+Contributions are welcome!
 
 ## Requirements
-rmp-segment is developed with ES6 and makes extensive uses of new ES6 features like Promise.
+rmp-segment is developed with ES6 and makes uses of new ES6 features like Promise.
 - Node.js version 4.4+ 
 - OS Linux 64-bits
  - Debian 8+
  - Ubuntu 14+
  - Fedora 24+
 - OS Windows 64-bits:
- - Windows 10
+ - Windows 8.1+
 
 These are the OS we tested rmp-segment on. 32-bits OS are not supported.
 
 ## Install
-`npm i rmp-segment -g`
+`npm install -g rmp-segment`
 
 ## Usage
 `rmp-segment -i input/bbb -o output/bbb`
+
+The segmenter will locate all valid input files (.mp4|.m4a|.m4v) in `input/bbb` and write the .ts chunks and .m3u8 playlists at `output/bbb`
 
 ## Documentation
 https://www.radiantmediaplayer.com/rmp-segment/
 
 ## For developer
+`git clone https://github.com/radiantmediaplayer/rmp-segment.git`
+`cd rmp-segment`
+`npm install`
+
 Install jshint globally: 
+
 `npm install -g jshint`
 
-In working directory (where rmp-segment.js is) run:
+In working directory (where main.js is) run:
 
-`grunt:shell:jshint`
-
-`jasmine`
+`grunt`
 
 If it greenlights you are good to go.
 
@@ -70,16 +75,12 @@ rmp-segment uses the following dependencies:
 - [mp4box.js](https://github.com/gpac/mp4box.js/) which is released under  BSD-3
 - [node-mkdirp](https://github.com/substack/node-mkdirp) which is released under MIT
 
-## Custom licensing and professional support
-We provide a dedicated support and custom licensing plan. This plan includes:
+## LGPL v3 licensing and professional support
+For business users we can provide a support and LGPL v3 licensing plan. This plan includes:
 - Professional email-based technical support with priority bugfixes and feature requests
 - Business-friendly LGPL version 3 compatible code for rmp-segment and FFmpeg build for Linux or Windows
 
-This support and custom licensing plan is available for $199 per month (billed annually)
+Visit this [page to subscribe](https://www.radiantmediaplayer.com/rmp-segment/#rmp-segment-plan) or [contact us](https://www.radiantmediaplayer.com/contact.html) for more information. 
 
 ## Supporting the project
 Code contributions and further testing are welcome.
-
-If you want to support the project further please consider making a donation (an invoice can be provided).
-
- 

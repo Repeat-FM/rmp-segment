@@ -1,9 +1,17 @@
-'use strict'; 
+'use strict';
 const fs = require('fs');
 // FW is for framework - i.e. helper functions for rmp-segment
 class FW {
 
   constructor() { }
+
+  fileExists(path) {
+    try {
+      return fs.statSync(path).isFile();
+    } catch (e) {
+      return false;
+    }
+  }
 
   parseSyncJSON(jsonPath) {
     try {
@@ -13,7 +21,7 @@ class FW {
       return -1;
     }
   }
-  
+
 }
 
 module.exports = FW;

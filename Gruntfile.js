@@ -8,20 +8,27 @@ module.exports = function (grunt) {
         files: [
           'Gruntfile.js',
           'libs/*.js',
-          'rmp-segment.js'
+          'main.js'
         ],
         tasks: ['shell:jshint']
       }
     },
     shell: {
       jshint: {
-        command: 'jshint rmp-segment.js libs/analysis.js libs/hls.js libs/prepare.js ' +
+        command: 'jshint main.js libs/analysis.js libs/hls.js libs/prepare.js ' +
         'libs/fw.js spec/rmp-segment/RMPSegmentSpec.js Gruntfile.js'
+      },
+      test: {
+        command: [
+          'jshint main.js libs/analysis.js libs/hls.js libs/prepare.js ' +
+          'libs/fw.js spec/rmp-segment/RMPSegmentSpec.js Gruntfile.js',
+          'jasmine'
+        ].join('&&')
       }
     }
   });
   // Default task(s).
   grunt.registerTask('default', [
-    'jshint'
+    'shell:test'
   ]);
 };

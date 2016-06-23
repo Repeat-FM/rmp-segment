@@ -2,11 +2,12 @@
 const exec = require('child_process').exec;
 const fs = require('fs');
 const input = 'input/bbb';
-const output = 'output/bbb';
+const output = 'output/bbb-test';
 describe('Test for basic rmp-segment task: ', () => {
-  let testCmd = 'node rmp-segment.js -i ' + input + ' -o ' + output;
+  let testCmd = 'node main.js -i ' + input + ' -o ' + output;
   it('HLS segment and write files to output folder', (done) => {
     let noError = true;
+    console.log('test command: ' + testCmd);
     exec(testCmd, (err) => {
       if (err) {
         console.log(err);
@@ -32,7 +33,7 @@ describe('Test for basic rmp-segment task: ', () => {
         }
         expect(noError).toBe(true);
         expect(nbM3U8).toEqual(2);
-        expect(nbTS).toEqual(10);
+        expect(nbTS).toEqual(5);
         console.log('RMP-SEGMENT: jasmine test ok');
         done();
       });
