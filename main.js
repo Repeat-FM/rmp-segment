@@ -45,6 +45,8 @@ var debug = false;
 var ffmpeg = 'utils/linux64/ffmpeg';
 if (os.platform() === 'win32') {
   ffmpeg = 'utils/win64/ffmpeg.exe';
+} else if (os.platform() === 'darwin') {
+  ffmpeg = 'utils/mac64/ffmpeg';
 }
 if (fw.fileExists(ffmpeg)) {
   ffmpeg = ffmpeg;
