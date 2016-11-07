@@ -103,6 +103,7 @@ class HLS {
     }
     let mediaPromise = [];
     let countPromise = 0;
+    let h264CodecTestString = /avc\d+\./gi;
     this.mediaData.forEach((element, index) => {
       mediaPromise[countPromise] = new Promise((resolve, reject) => {
         countPromise++;
@@ -142,10 +143,13 @@ class HLS {
           reject('HLS: Invalid output path for .m3u8 playlist and .ts chunks');
         }
         this.ffmpegCmd[index] = path.normalize(this.globalConfig.ffmpeg) + ' -i ' +
-          element.path + ' -bsf:v h264_mp4toannexb -c copy -hls_time ' +
+          element.path + ' -hls_time ' +
           this.globalConfig.tsChunkSize + ' -hls_allow_cache ' +
           this.globalConfig.allowCache + ' -hls_list_size 0' +
           ' -hls_segment_filename ' + outputPathTs + ' ';
+        if (h264CodecTestString.test(element.videoCodec)) {
+            this.ffmpegCmd[index] += '-bsf:v h264_mp4toannexb -c copy '
+        }
         if (this.segmentConfig.aes === true) {
           this.ffmpegCmd[index] += '-hls_key_info_file ' +
             path.join(this.segmentConfig.output, 'file.keyinfo') + ' ';

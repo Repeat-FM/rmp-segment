@@ -51,7 +51,7 @@ class Analysis {
           result.bitrate = 0;
           result.videoCodec = null;
           result.audioCodec = null;
-          let videoCodecTestString = /avc\d+\./gi;
+          let videoCodecTestString = /(avc\d+\.|mp4v)/gi;
           let audioCodecTestString = /mp4a\.\d+/gi;
           result.resolution = {};
           for (let key of mediaInfo.tracks) {
